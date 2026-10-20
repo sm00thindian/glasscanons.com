@@ -1,5 +1,6 @@
 /* GLASS CANONS: storm charcoal, ember orange, wheat, with a violet/teal psychedelic haze */
 @font-face{font-family:"Oswald";src:url(assets/fonts/oswald-var.woff2) format("woff2");font-weight:200 700;font-display:swap}
+@font-face{font-family:"EB Garamond";src:url(assets/fonts/eb-garamond-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"Lora";src:url(assets/fonts/lora-var.woff2) format("woff2");font-weight:400 700;font-display:swap}
 @font-face{font-family:"Lora";src:url(assets/fonts/lora-italic-var.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
 :root{
@@ -42,7 +43,10 @@ a:hover{color:#fff}
 .wordmark{font:700 clamp(3.4rem,10vw,7.8rem)/.88 var(--display);letter-spacing:.02em;margin:0;color:#f6efe2;
   text-shadow:0 0 28px rgba(239,122,46,.35),0 0 80px rgba(123,95,184,.35),0 4px 0 rgba(0,0,0,.35)}
 .hero-album{margin:1.6rem 0 .2rem;font:400 1.15rem var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--wheat)}
-.hero-album strong{display:block;font:600 clamp(2.2rem,5vw,3.4rem)/1 var(--display);letter-spacing:.18em;color:var(--ember2);margin-top:.35rem}
+/* HARVEST title lockup: orange EB Garamond SemiBold caps between thin orange rules (matches the cover) */
+.hero-album strong{display:flex;align-items:center;gap:.5em;width:fit-content;max-width:100%;font:600 clamp(2.3rem,5.4vw,3.6rem)/1 "EB Garamond",Georgia,"Times New Roman",serif;letter-spacing:.16em;text-transform:uppercase;color:rgb(219,141,93);margin-top:.45rem}
+.hero-album strong::before,.hero-album strong::after{content:"";flex:0 0 clamp(1.4rem,4vw,3rem);height:1px;background:rgb(219,141,93)}
+.hero-album strong span{margin-right:-.16em}
 .hero-date{margin:.4rem 0 1.6rem;font-style:italic;color:var(--ink)}
 .hero-cover img{width:100%;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06),0 0 90px rgba(239,122,46,.18);transform:rotate(1.2deg);transition:transform .4s}
 .hero-cover:hover img{transform:rotate(0) scale(1.01)}
@@ -71,8 +75,8 @@ a:hover{color:#fff}
 .sub::after{content:"";flex:1;height:1px;background:var(--line)}
 
 /* Album */
-.album{display:grid;grid-template-columns:460px 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-.album-cover{border-radius:4px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+.album{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.album-cover{width:100%;height:auto;border-radius:4px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
 .tracks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem 1.1rem}
 @media (max-width:1100px){.tracks{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:760px){.tracks{grid-template-columns:repeat(3,1fr)}}
@@ -104,8 +108,8 @@ a:hover{color:#fff}
 
 /* Responsive */
 @media (max-width:900px){
-  .album{grid-template-columns:1fr}
-  .album-cover{max-width:460px}
+  .album{grid-template-columns:minmax(0,1fr)}
+  .album-cover{max-width:460px;width:100%;height:auto}
 }
 @media (max-width:820px){
   .nav-toggle{display:inline-block}
