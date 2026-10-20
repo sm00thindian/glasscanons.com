@@ -91,8 +91,8 @@ a:hover{color:#fff}
 .single img{border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .single-title{font:600 2.2rem/1 var(--display);letter-spacing:.12em;margin:0 0 1rem}
 .disco{list-style:none;margin:0 0 1rem;padding:0;border-top:1px solid var(--line)}
-.disco a{display:flex;justify-content:space-between;gap:1rem;padding:1rem .2rem;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
-.disco a:hover{background:rgba(239,122,46,.07)}
+.disco > li{padding:1rem .2rem;border-bottom:1px solid var(--line)}
+.disco .d-row{display:flex;justify-content:space-between;gap:1rem;color:var(--ink)}
 .d-title{font:500 1.1rem var(--display);letter-spacing:.1em}
 .d-meta{color:var(--muted);font-size:.92rem;white-space:nowrap}
 .lite{position:relative;display:block;aspect-ratio:16/9}
@@ -128,3 +128,9 @@ a:hover{color:#fff}
   .btn{padding:.8rem 1rem}
   .d-title{font-size:1rem}
 }
+
+/* Per-song streaming links (compact row) */
+.stream{list-style:none;padding:0;margin:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.4rem}
+.stream a{display:inline-block;font:500 .72rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid rgba(239,230,214,.3);border-radius:3px;padding:.45rem .6rem;white-space:nowrap}
+.stream a:hover{color:#1a120b;background:var(--ember2);border-color:var(--ember2)}
+.stream-label{margin:1.2rem 0 0;font:500 .78rem/1.4 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--wheat)}
